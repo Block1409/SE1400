@@ -5,6 +5,10 @@ body {
     background-image:linear-gradient(to bottom,#eeeeee, #ffffff);
     background-attachment: fixed;
 }
+main {
+    padding-left:2rem;
+    padding-right:2rem;
+}
 header {
     background-color: #003058;
     color:#FFFFFF;
@@ -15,6 +19,7 @@ body header h1 {
     padding:.5rem;
 }
 nav {
+    padding:.5rem .5rem .5rem 2rem;
     font-weight:bold;
     background-color:#F3F3F3;
 }
@@ -30,6 +35,9 @@ h2 {
     color:#424242;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+h3 {
+    color:#003058;
+}
 .ut {
     color:#BA1C21;
     font-weight:bold;
@@ -39,6 +47,7 @@ dt {
     font-weight:bold;
 }
 footer {
+    padding:1rem;
     font-size:.70rem;
     font-style:italic;
     text-align:center;
@@ -54,4 +63,18 @@ footer {
 }
 #students {
     width:300px;
+}
+#homehero {
+    height:300px;
+    background-image:url("assets/homehero.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+}
+#studenthero {
+    height:300px;
+    background-image:url("assets/studenthero.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
 }
