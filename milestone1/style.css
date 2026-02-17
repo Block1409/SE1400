@@ -1,6 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    width:100%;
+}
 a {
     color:red;
     text-decoration: none;
+}
+nav ul li a:hover {
+    background-image:url("assets/casino-1.1.jpg");
+    padding:0px;
+    margin:0px;
 }
 header {
     background-color:rgb(217, 63, 63, 1);
@@ -36,6 +47,9 @@ nav {
     border-radius:20px;
     text-align:center;
     font-size:2em;
+    position: sticky;
+    top:0px;
+    z-index: 1;
 }
 nav ul li {
     display:inline-block;
@@ -44,6 +58,10 @@ nav ul li {
 }
 .images {
     width:400px;
+    float: left;
+}
+.clear {
+    clear:both;
 }
 .ILOVETREVOR {
     /*This is the image at the top of the website*/
@@ -52,4 +70,11 @@ nav ul li {
     background-repeat:no-repeat;
     background-size:cover;
     background-position:50% 50%;
+}
+.column {
+    float:left;
+    margin:none;
+    background-color:#653636ee;
+    padding:10%;
+    margin:5px;
 }
