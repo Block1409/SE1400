@@ -7,7 +7,7 @@ header {
     background-color:#A5F9FF;
     height:150px;
     grid-row:1 / 2;
-    grid-column: 2 / -2;
+    grid-column: 1 / -1;
 }
 #logo {
     background-color:#E17878;
@@ -21,13 +21,13 @@ header {
     background-color:#CC79FF;
     height:75px;
     grid-row:1 / 2;
-    margin:0px 10px;
+    margin:0px 15px;
 }
 nav {
     background-color:#6BFF93;
     height:75px;
     grid-row:2 / 3;
-    grid-column: 2 / -2;
+    grid-column: 1 / -1;
 }
 #hero {
     background-color:#836AFF;
@@ -39,7 +39,8 @@ main {
     background-color:#FDFF96;
     height:1000px;
     grid-row:4 / 5;
-    grid-column: 2 / -2;
+    grid-column: 1 / -1;
+    margin: 0px 15px;
 }
 footer {
     background-color:#FF73C2;
@@ -49,4 +50,5 @@ footer {
 }
 body {
     background-color:#F9C63B;
+    margin:0px
 }
