@@ -23,6 +23,20 @@ header {
     grid-row:1 / 2;
     margin:0px 15px;
 }
+#words p {
+    font-size:3em;
+    margin:0px;
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+#CASINOOO {
+    text-align: center;
+}
+#CASINOO {
+    text-align: right;
+    font-weight: 600;
+}
 nav {
     background-color:#6BFF93;
     height:75px;
