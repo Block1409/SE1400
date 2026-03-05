@@ -10,7 +10,7 @@ header {
     grid-column: 1 / -1;
 }
 #logo {
-    background-color:#E17878;
+    background-image:"assets/chips.png";
     height:75px;
     width:150px;
     grid-row:1 / 2;
@@ -29,13 +29,7 @@ header {
     font-family: "Inria Serif", serif;
     font-weight: 700;
     font-style: normal;
-}
-#CASINOOO {
     text-align: center;
-}
-#CASINOO {
-    text-align: right;
-    font-weight: 600;
 }
 nav {
     background-color:#6BFF93;
