@@ -9,6 +9,10 @@ header {
     grid-row:1 / 2;
     grid-column: 1 / -1;
     color:#cc2a2f;
+    grid-template-columns: 1fr 1fr 1fr;
+    display:grid;
+    grid-template-rows:auto auto;
+    align-items: center;
 }
 #logo {
     background-image:url("assets/chips.png");
@@ -17,16 +21,15 @@ header {
     background-position: center;
     height:75px;
     width:150px;
-    grid-row:1 / 2;
-    place-self:center;
-    align-self:center;
-    justify-self: center;
-    margin:15px 0px 0px 0px;
+    grid-column:2;
+    grid-row:1;
+    margin:10px auto 0 auto;
 }
 #words {
-    height:80px;
     grid-row:1 / 2;
-    margin:0px 15px;
+    grid-column: 2;
+    grid-row:2;
+    text-align: center;
 }
 #words p {
     font-size:4em;
@@ -35,6 +38,7 @@ header {
     font-weight: 700;
     font-style: normal;
     text-align: center;
+    white-space: nowrap;
 }
 nav {
     background-color:#a18528;
@@ -84,7 +88,7 @@ main {
 }
 footer {
     background-color:#cc2a2f;
-    height:150px;
+    height:100px;
     grid-row:5 / 6;
     grid-column: 1 / -1;
     text-align:center;
@@ -115,4 +119,19 @@ body {
 .box img{
     width: 120px;
     margin-top: 10px;
+}
+#number {
+    grid-column:3;
+    grid-row:2;
+    justify-self:end;
+    margin-right:30px;
+    font-family:"Inria Serif", serif;
+    font-size:2em;
+}
+#social {
+    grid-column:1;
+    grid-row:2;
+}
+#social img {
+    padding:5px 5px 5px 0px;
 }
