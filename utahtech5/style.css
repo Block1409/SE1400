@@ -161,4 +161,22 @@ main img {
         grid-row:2 / 3;
         height:auto;
     }
+    main img {
+        float:none;
+        width:100%;
+        padding-left:0px;
+    }
+}
+@media only screen and (max-width:600px){
+    header h1{
+        background-image:none;
+        text-align:center;
+    }
+    nav {
+        grid-column:1 / -1;
+        grid-row: 2 / 3;
+    }
+    #homehero, #studenthero, #facultyhero{
+        display:none;
+    }
 }
