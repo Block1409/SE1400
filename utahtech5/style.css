@@ -132,6 +132,6 @@ main img {
     float:right;
     padding-left:2rem;
 }
-@media screen and {max-width:700px}{
+@media screen and (max-width:700px){
     
 }
