@@ -21,13 +21,13 @@ header {
     background-position: center;
     height:75px;
     width:150px;
-    grid-column:2;
+    grid-column:1;
     grid-row:1;
     margin:10px auto 0 auto;
 }
 #words {
     grid-row:1 / 2;
-    grid-column: 2;
+    grid-column: 1;
     grid-row:2;
     text-align: center;
 }
@@ -134,4 +134,17 @@ body {
 }
 #social img {
     padding:5px 5px 5px 0px;
+}
+@media only screen and (max-width:992px) {
+    nav{
+        flex-flow:column nowrap;
+        grid-column: -1 / -4;
+        grid-row: 1 / 2;
+        height:200px
+    }
+}
+@media only screen and (max-width:768px) {
+    #wrapper {
+        grid-template-columns: 1fr 100% 1fr;
+    }
 }
