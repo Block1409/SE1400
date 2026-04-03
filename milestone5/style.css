@@ -181,6 +181,7 @@ body {
     }
     header {
         margin:0px;
+        height:100px;
     }
     main {
         grid-template-columns: 1fr;
