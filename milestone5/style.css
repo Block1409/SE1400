@@ -109,7 +109,10 @@ body {
     padding: 20px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.8s ease, box-shadow 0.2s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position:relative;
 }
 .box:hover {
     transform: translateY(-5px);
@@ -124,9 +127,22 @@ body {
     word-wrap:break-word;
     line-height: 1.4;
 }
-.box img{
+.box img {
     width: 100px;
     margin: 15px auto 0 auto;
+}
+.box-back {
+    display:none;
+}
+
+.box:active {
+    transform:rotateY(180deg);
+}
+.box:active p, .box:active img {
+    display:none
+}
+.box:active .box-back{
+    display:block;
 }
 #number {
     grid-column:3;
@@ -187,14 +203,14 @@ body {
         grid-template-columns: 1fr;
     }
     nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 3px;
-    background-color: #cc2a2f;
-    transition: width 0.3s ease;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0%;
+        height: 3px;
+        background-color: #cc2a2f;
+        transition: width 0.3s ease;
 }
     nav a:hover::after {
     width: 100%;
