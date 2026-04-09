@@ -131,19 +131,6 @@ body {
     width: 100px;
     margin: 15px auto 0 auto;
 }
-.box-back {
-    display:none;
-}
-
-.box:active {
-    transform:rotateY(180deg);
-}
-.box:active p, .box:active img {
-    display:none
-}
-.box:active .box-back{
-    display:block;
-}
 #number {
     grid-column:3;
     grid-row:2;
