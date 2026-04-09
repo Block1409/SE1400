@@ -58,10 +58,10 @@ nav a {
     padding: 1rem 0rem;
     display:block;
     text-align: center;
+    transition: background-color 0.5s ease-out;
 }
 nav a:hover {
     background-color:#BA1C21;
-    transition: background-color 0.5s ease-out;
 }
 h1 {
     background-image:url(assets/utahtechlogo.svg);
@@ -225,6 +225,12 @@ video {
         width:100%;
         padding-left:0px;
     }
+    video {
+        float:none;
+        margin:0px;
+        width:100%;
+        height:auto;
+    }
 }
 @media only screen and (max-width:600px){
     header h1{
@@ -238,10 +244,5 @@ video {
     #homehero, #studenthero, #facultyhero, #alumnihero{
         display:none;
     }
-    video {
-        float:none;
-        margin:0px;
-        width:100%;
-        height:auto;
-    }
+   
 }
