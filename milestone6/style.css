@@ -110,9 +110,6 @@ body {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transition: transform 0.8s ease, box-shadow 0.2s ease;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    position:relative;
 }
 .box:hover {
     transform: translateY(-5px);
