@@ -101,6 +101,10 @@ body {
     background-color: #d7ae36;
     margin:0px
 }
+
+.flip {
+    display:none;
+}
 .box {
     max-width: 800px;
     background-color: #d4aa3f;
@@ -110,6 +114,13 @@ body {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transition: transform 0.8s ease, box-shadow 0.2s ease;
+    min-height:340px;
+}
+.box:hover .flip {
+    display:block;
+}
+.box:hover .reg {
+    display:none;
 }
 .box:hover {
     transform: translateY(-5px);
