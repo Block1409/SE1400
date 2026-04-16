@@ -195,7 +195,7 @@ table {
 }
 td, th {
     padding:5px;
-    border:1px solid #424242;
+    border:1px solid #424242;url(assets/hoodie2.jpg)
 }
 td {
     text-align:center;
@@ -209,6 +209,14 @@ tr:nth-of-type(even) {
 video {
     float:right;
     margin-left:2em;
+}
+#shoppingcart img {
+    width:100%;
+    height:auto;
+}
+#shoppingcart {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 @media only screen and (max-width:1100px){
     #wrapper{
@@ -240,6 +248,9 @@ video {
         width:100%;
         height:auto;
     }
+    #shoppingcart {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media only screen and (max-width:600px){
     header h1{
@@ -253,5 +264,7 @@ video {
     #homehero, #studenthero, #facultyhero, #alumnihero, #shophero{
         display:none;
     }
-   
+   #shoppingcart {
+        grid-template-columns: 1fr;
+    }
 }
