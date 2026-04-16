@@ -43,11 +43,14 @@
 
             <main id="slot">
                 <div id="machine">
-                    <div id="slot-machine">
-                        <div class="reel" id="reel1">❓</div>
-                        <div class="reel" id="reel2">❓</div>
-                        <div class="reel" id="reel3">❓</div>
+                    <div id="cabinet">
+                        <div id="slot-machine">
+                            <div class="reel" id="reel1">❓</div>
+                            <div class="reel" id="reel2">❓</div>
+                            <div class="reel" id="reel3">❓</div>
+                        </div>
                     </div>
+                    
                     <p id="result"></p>
                 </div>
 
@@ -59,6 +62,8 @@
 
 
                 <script>
+                    let spinDuration = 2000;
+                    let intervalSpeed = 100;
                     let firstSpin = true;
                     const symbols = ["🍒","🍋","🍊","💎"];
 
@@ -80,11 +85,11 @@
                     let offset = e.clientY - rect.top;
 
                     if (offset < 0) offset = 0;
-                    if (offset > 90) offset = 90;
+                    if (offset > 120) offset = 120;
 
                     knob.style.top = offset + "px";
 
-                    if (offset > 89) {
+                    if (offset > 119) {
                         dragging = false;
                         spin();
                         setTimeout(() => knob.style.top = "0px", 200);
@@ -127,15 +132,23 @@
                         r2.classList.remove("spinning");
                         r3.classList.remove("spinning");
 
-                        // win logic
+                        const cabinet = document.getElementById("cabinet");
+
+                        cabinet.classList.remove("win");
+
                         if (s1 === s2 && s2 === s3) {
-                        if (s1 === "💎") {
-                            result.textContent = "💎 JACKPOT 💎";
+                            cabinet.classList.add("win");
+
+                            if (s1 === "💎") {
+                                result.textContent = "💎 JACKPOT 💎";
+                            } else {
+                                result.textContent = "🎉 You win!";
+                            }
+
+                            setTimeout(() => cabinet.classList.remove("win"), 2000);
+
                         } else {
-                            result.textContent = "🎉 You win!";
-                        }
-                        } else {
-                        result.textContent = "Try again";
+                            result.textContent = "Try again";
                         }
 
                     }, 1200);
