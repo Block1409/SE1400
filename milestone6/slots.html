@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us</title>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16" />
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header>
+                <div id="logo">
+
+                </div>
+
+                <div id="words">
+                    <p>Casino Games</p>
+                </div>
+
+                <div id="number">
+                    <p>435-619-6812</p>
+                </div>
+
+                <div id="social">
+                    <img src="assets/gram.png">
+                    <img src="assets/tube.png">
+                </div>
+            </header>
+
+            <nav>
+                <a href="casinos.html">Casinos</a>
+                <a href="games.html">Games</a>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+
+            <main id="slot">
+                <div id="machine">
+                    <div id="slot-machine">
+                        <div class="reel" id="reel1">❓</div>
+                        <div class="reel" id="reel2">❓</div>
+                        <div class="reel" id="reel3">❓</div>
+                    </div>
+                    <p id="result"></p>
+                </div>
+
+                <div id="lever-container">
+                    <div id="lever">
+                        <div id="knob"></div>
+                    </div>
+                </div>
+
+
+                <script>
+                    let firstSpin = true;
+                    const symbols = ["🍒","🍋","🍊","💎"];
+
+                    const knob = document.getElementById("knob");
+                    let dragging = false;
+
+                    knob.addEventListener("mousedown", () => dragging = true);
+                    document.addEventListener("mouseup", () => {
+                    if (dragging) {
+                        dragging = false;
+                        knob.style.top = "0px";
+                    }
+                    });
+
+                    document.addEventListener("mousemove", (e) => {
+                    if (!dragging) return;
+
+                    const rect = knob.parentElement.getBoundingClientRect();
+                    let offset = e.clientY - rect.top;
+
+                    if (offset < 0) offset = 0;
+                    if (offset > 90) offset = 90;
+
+                    knob.style.top = offset + "px";
+
+                    if (offset > 89) {
+                        dragging = false;
+                        spin();
+                        setTimeout(() => knob.style.top = "0px", 200);
+                    }
+                    });
+
+                    function rand() {
+                    return symbols[Math.floor(Math.random() * symbols.length)];
+                    }
+
+                    function spin() {
+                    const r1 = document.getElementById("reel1");
+                    const r2 = document.getElementById("reel2");
+                    const r3 = document.getElementById("reel3");
+                    const result = document.getElementById("result");
+
+                    r1.classList.add("spinning");
+                    r2.classList.add("spinning");
+                    r3.classList.add("spinning");
+
+                    result.textContent = "Spinning...";
+
+                    setTimeout(() => {
+                        let s1, s2, s3;
+
+                        if (firstSpin) {
+                        s1 = s2 = s3 = "💎";
+                        firstSpin = false;
+                        } else {
+                        s1 = rand();
+                        s2 = rand();
+                        s3 = rand();
+                        }
+
+                        r1.textContent = s1;
+                        r2.textContent = s2;
+                        r3.textContent = s3;
+
+                        r1.classList.remove("spinning");
+                        r2.classList.remove("spinning");
+                        r3.classList.remove("spinning");
+
+                        // win logic
+                        if (s1 === s2 && s2 === s3) {
+                        if (s1 === "💎") {
+                            result.textContent = "💎 JACKPOT 💎";
+                        } else {
+                            result.textContent = "🎉 You win!";
+                        }
+                        } else {
+                        result.textContent = "Try again";
+                        }
+
+                    }, 1200);
+                    }
+                </script>
+
+            </main>
+
+            <footer>
+                <p>Copyright &copy;</p>
+            </footer>
+        </div>
+    </body>
+</html>
