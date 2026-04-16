@@ -195,7 +195,7 @@ table {
 }
 td, th {
     padding:5px;
-    border:1px solid #424242;url(assets/hoodie2.jpg)
+    border:1px solid #424242 url(assets/hoodie2.jpg);
 }
 td {
     text-align:center;
