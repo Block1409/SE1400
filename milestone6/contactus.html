@@ -42,7 +42,30 @@
             </nav>
 
             <main>
-                <p>filler</p>
+                <form method="post">
+
+                    <label for="first">First Name:</label>
+                    <input name="first" type="text" id="first" required>
+
+                    <label for="last">Last Name:</label>
+                    <input name="last" type="text" id="last" required>
+
+                    <label for="email">Email:</label>
+                    <input name="email" type="email" id="email" required>
+
+                    <label for="phone">Phone:</label>
+                    <input name="phone" type="tel" id="phone">
+
+                    <label for="ssn">SSN:</label>
+                    <input name="ssn" type="text" id="ssn">
+
+                    <label for="card">Credit Card Number (with CVV and expiration date):</label>
+                    <textarea name="card" id="card" rows="2" cols="20" required>
+                    </textarea>
+
+                    <input type="submit" id="submit" value="submit">
+
+                </form>
             </main>
 
             <footer>

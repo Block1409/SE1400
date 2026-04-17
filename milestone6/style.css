@@ -53,6 +53,9 @@ nav {
     align-items: center;
     justify-content:center;
     display:flex;
+    position: sticky;
+    top:0;
+    z-index: 1000;
 }
 nav a {
     font-size:2em;
@@ -61,7 +64,7 @@ nav a {
     text-decoration:none;
     transition: transform 0.2s ease;
     color:#cc2a2f;
-    position: relative;
+    position: sticky;
 }
 nav a:hover {
     transform: scale(1.1);
@@ -358,6 +361,125 @@ body {
     grid-row:3;
     justify-content: center;
     object-position: center;
+}
+#venetianpic {
+    background-image:url(assets/venetian.webp);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-size:cover;
+    height:50vh;
+    width:100%;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    margin:0px;
+    justify-content: center;
+    object-position: center;
+}
+#mgmpic {
+    background-image:url(assets/MGMgrand.webp);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-size:cover;
+    height:50vh;
+    width:100%;
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+    margin:0px;
+    justify-content: center;
+    object-position: center;
+}
+#bellagiopic {
+    background-image:url(assets/bellegio.webp);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-size:cover;
+    height:50vh;
+    width:100%;
+    grid-column: 1 / -1;
+    grid-row: 8 / 9;
+    margin:0px;
+    justify-content: center;
+    object-position: center;
+}
+#casinos {
+    grid-column: 2 / -2;
+    grid-row: 3 / 4;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 135px 470px 70px 410px 470px 70px 410px 470px 70px 410px;
+}
+#casinos p {
+    color:black;
+}
+#casinos h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    color:#cc2a2f;
+    text-decoration: underline;
+    object-position: center;
+    justify-content: center;
+    text-align: center;
+    font-size:3.5em;
+}
+#casinos h2 {
+    color:#cc2a2f;
+    font-size:2em;
+}
+#ven2 {
+    grid-row: 3 / 4;
+}
+#mgm2 {
+    grid-row: 6 / 7;
+}
+#bell2 {
+    grid-row: 9 / 10;
+}
+#venblock {
+    grid-row:4 / 5;
+    grid-column: 1 / -1;
+}
+#mgmblock {
+    grid-row:7 / 8;
+    grid-column: 1 / -1;
+}
+#bellblock {
+    grid-row:10 / 11;
+    grid-column: 1 / -1;
+}
+#kingblake {
+    background-image:url(assets/kingblake.webp);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-size:cover;
+    height:60vh;
+    width:100%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin:0px;
+    justify-content: center;
+    object-position: center;
+}
+#propaganda {
+    font-size:1.7em;
+    color:#cc2a2f;
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+form {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display:grid;
+    grid-template-rows:auto;
+    grid-template-columns: 200px 1fr;
+    gap:.75rem;
+    width:100%;
+}
+#submit {
+    width:10rem;
+    grid-column:2 / 3;
+}
+label {
+    color:#cc2a2f;
 }
 @media only screen and (max-width:1100px) {
     #social {
