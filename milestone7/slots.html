@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slot Machines</title>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16" />
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="slotwrapper">
+            <header>
+                <div id="logo">
+
+                </div>
+
+                <div id="words">
+                    <p>Casino Games</p>
+                </div>
+
+                <div id="number">
+                    <p>435-619-6812</p>
+                </div>
+
+                <div id="social">
+                    <img src="assets/gram.png">
+                    <img src="assets/tube.png">
+                </div>
+            </header>
+
+            <nav>
+                <a href="casinos.html">Casinos</a>
+                <a href="games.html">Games</a>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+
+            <div id="slot">
+                <div id="machine">
+                    <div id="cabinet">
+                        <div id="slot-machine">
+                            <div class="reel" id="reel1">❓</div>
+                            <div class="reel" id="reel2">❓</div>
+                            <div class="reel" id="reel3">❓</div>
+                        </div>
+                    </div>
+                    
+                    <p id="result"></p>
+                </div>
+
+                <div id="lever-container">
+                    <div id="lever">
+                        <div id="knob"></div>
+                    </div>
+                </div>
+
+
+                <script>
+                    let spinDuration = 2000;
+                    let intervalSpeed = 100;
+                    let firstSpin = true;
+                    const symbols = ["🍒","🍋","🍊","💎"];
+
+                    const knob = document.getElementById("knob");
+                    let dragging = false;
+
+                    knob.addEventListener("mousedown", () => dragging = true);
+                    document.addEventListener("mouseup", () => {
+                    if (dragging) {
+                        dragging = false;
+                        knob.style.top = "0px";
+                    }
+                    });
+
+                    document.addEventListener("mousemove", (e) => {
+                    if (!dragging) return;
+
+                    const rect = knob.parentElement.getBoundingClientRect();
+                    let offset = e.clientY - rect.top;
+
+                    if (offset < 0) offset = 0;
+                    if (offset > 120) offset = 120;
+
+                    knob.style.top = offset + "px";
+
+                    if (offset > 119) {
+                        dragging = false;
+                        spin();
+                        setTimeout(() => knob.style.top = "0px", 200);
+                    }
+                    });
+
+                    function rand() {
+                    return symbols[Math.floor(Math.random() * symbols.length)];
+                    }
+
+                    function spin() {
+                    const r1 = document.getElementById("reel1");
+                    const r2 = document.getElementById("reel2");
+                    const r3 = document.getElementById("reel3");
+                    const result = document.getElementById("result");
+
+                    r1.classList.add("spinning");
+                    r2.classList.add("spinning");
+                    r3.classList.add("spinning");
+
+                    result.textContent = "Spinning...";
+
+                    setTimeout(() => {
+                        let s1, s2, s3;
+
+                        if (firstSpin) {
+                        s1 = s2 = s3 = "💎";
+                        firstSpin = false;
+                        } else {
+                        s1 = rand();
+                        s2 = rand();
+                        s3 = rand();
+                        }
+
+                        r1.textContent = s1;
+                        r2.textContent = s2;
+                        r3.textContent = s3;
+
+                        r1.classList.remove("spinning");
+                        r2.classList.remove("spinning");
+                        r3.classList.remove("spinning");
+
+                        const cabinet = document.getElementById("cabinet");
+
+                        cabinet.classList.remove("win");
+
+                        if (s1 === s2 && s2 === s3) {
+                            cabinet.classList.add("win");
+
+                            if (s1 === "💎") {
+                                result.textContent = "💎 JACKPOT 💎";
+                            } else {
+                                result.textContent = "You win!";
+                            }
+
+                            setTimeout(() => cabinet.classList.remove("win"), 2000);
+
+                        } else {
+                            result.textContent = "Try again";
+                        }
+
+                    }, 1200);
+                    }
+                </script>
+
+                
+
+            </div>
+
+            <div id="extra">
+
+                <h1>Slot Machines</h1>
+
+                <p>Slot machines are one of the most iconic forms of gambling, found in almost every casino worldwide, as well as in many online platforms. They operate on the simple concept of chance, where players spin reels filled with various symbols, hoping to match a specific combination across paylines. Traditional slot machines featured mechanical reels, but modern ones are powered by digital screens and random number generators (RNGs), ensuring every spin is independent and unpredictable. Players can choose to place bets of varying sizes, and depending on the machine, they can win smaller payouts or hit massive jackpots. Some slots feature special bonus rounds, free spins, or themed games based on movies, TV shows, or even mythology, providing more excitement and variety. Slots are especially popular due to their simplicity—no skill is required, making them accessible for beginners and experienced players alike. However, despite their entertainment value, they are designed with a house edge, meaning players should always approach them with caution. With jackpots ranging from small prizes to multi-million-dollar payouts, slots are one of the most thrilling and popular forms of gambling today.</p>
+            </div>
+
+            <footer>
+                <p>Copyright &copy;</p>
+            </footer>
+        </div>
+    </body>
+</html>
